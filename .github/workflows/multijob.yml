@@ -1,0 +1,33 @@
+name: multijob test
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs: 
+  mypy: 
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v1
+        with: 
+          python-version: 3.9
+      - name: install mypy
+        run: pip install mypy
+      - name: execute mypy
+        run: mypy app
+        
+  pylint: 
+    steps: 
+      - uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v1
+        with: 
+          python-version: 3.9
+      - name: install pylint
+        run: pip install pylint
+      - name: execute pylint
+        run: pylint app
