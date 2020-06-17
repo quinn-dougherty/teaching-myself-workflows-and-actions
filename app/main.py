@@ -1,7 +1,7 @@
 from typing import Union
 
 
-def foo(x: str) -> Union[int, str]: 
+def foo(x: Union[str, int]) -> Union[int, str]: 
   try: 
     return int(x)
   except ValueError as exc: 
