@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: echoing with tag name
-        run |
+        run: |
           echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:10})
           echo The tag was ${{ env.RELEASE_VERSION }}
       - name: did the tag env var persist?
-        run echo The tag was ${{ env.RELEASE_VERSION }}
+        run: echo The tag was ${{ env.RELEASE_VERSION }}
