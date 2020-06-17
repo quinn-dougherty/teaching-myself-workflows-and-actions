@@ -21,6 +21,8 @@ jobs:
         run: mypy app
         
   pylint: 
+    runs-on: ubuntu-latest
+    
     steps: 
       - uses: actions/checkout@v2
       - name: setup python
