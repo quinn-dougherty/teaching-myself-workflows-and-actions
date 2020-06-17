@@ -15,9 +15,9 @@ jobs:
     
     steps: 
       - name: echo stuff
-      - env: 
+        env: 
           FOO: fooski
           BAR: barski
-      - run: |
+        run: |
           echo what in the ${{ env.FOO }}
           echo in the name of ${{ env.BAR }}
