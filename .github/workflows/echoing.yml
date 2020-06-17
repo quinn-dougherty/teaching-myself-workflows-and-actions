@@ -1,0 +1,23 @@
+name: echoing stuff
+
+on: 
+  push:
+    branches: 
+      - master
+  pull_request:
+    branches:
+      - master
+ 
+
+jobs: 
+  echoing: 
+    runs-on: ubuntu-latest
+    
+  steps: 
+    name: echo stuff
+    env: 
+      FOO: fooski
+      BAR: barski
+    run: |
+      echo what in the ${{ env.FOO }}
+      echo in the name of ${{ env.BAR }}
