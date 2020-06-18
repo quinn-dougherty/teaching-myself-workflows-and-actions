@@ -1,0 +1,27 @@
+name: Testing to see if app can be pinged from within worfklow
+
+
+on: 
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - master
+
+jobs: 
+  flask: 
+    runs-on: ubuntu-20.04
+    
+    steps: 
+      - uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v1
+        with: 
+          python-version: 3.8.3
+      - name: install flask
+        run: pip install -r requirements.txt
+      - name: run app
+        run: python app/app.py
+      - name: ping app
+        run python app/request.py
