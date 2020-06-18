@@ -14,6 +14,6 @@ jobs:
     
     steps: 
     - name: succeed
-      run: docker run debian echo 1
+      run: docker run debian echo $PATH
     - name: fail
       run: docker run -v $(pwd):/home debian python app/request.py
