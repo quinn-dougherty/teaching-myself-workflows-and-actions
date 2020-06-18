@@ -24,4 +24,4 @@ jobs:
       - name: run app
         run: python app/app.py
       - name: ping app
-        run python app/request.py
+        run: python app/request.py
