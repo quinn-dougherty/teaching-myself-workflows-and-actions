@@ -4,10 +4,10 @@ name: Testing to see if app can be pinged from within worfklow
 on: 
   push:
     branches:
-      - master
+      - silly
   pull_request:
     branches: 
-      - master
+      - silly
 
 jobs: 
   flask: 
