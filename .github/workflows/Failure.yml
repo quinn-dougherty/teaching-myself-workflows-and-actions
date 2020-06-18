@@ -16,4 +16,4 @@ jobs:
     - name: succeed
       run: docker run debian echo $PATH
     - name: fail
-      run: docker run -v $(pwd):/home debian /usr/bin/python app/request.py
+      run: docker run -v $(pwd):/home debian /bin/bash -c "python app/request.py"
