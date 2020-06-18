@@ -13,10 +13,7 @@ jobs:
     runs-on: ubuntu-20.04
     
     steps: 
-    - uses: actions/checkout@v2
-    - name: setup python
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.8.3
-    - name: Fail
-      run: python app/request.py
+    - name: succeed
+      run: docker run debian:buster-slim echo 1
+    - name: fail
+      run: docker run -v $(pwd):/ debian:buster-slim python request.py
