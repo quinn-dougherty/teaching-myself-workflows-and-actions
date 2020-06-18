@@ -16,4 +16,4 @@ jobs:
     - name: succeed
       run: docker run debian:buster-slim echo 1
     - name: fail
-      run: docker run -v $(pwd):/ debian:buster-slim python request.py
+      run: docker run -v $(pwd):/ debian:buster-slim python app/request.py
