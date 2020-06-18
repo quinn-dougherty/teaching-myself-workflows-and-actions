@@ -14,6 +14,6 @@ jobs:
     
     steps: 
     - name: succeed
-      run: docker run debian echo $PATH
+      run: docker run debian:buster-slim echo $PATH
     - name: fail
-      run: docker run -v $(pwd):/home debian /bin/bash -c "python app/request.py"
+      run: docker run -v $(pwd):/home debian:buster-slim ls fish
