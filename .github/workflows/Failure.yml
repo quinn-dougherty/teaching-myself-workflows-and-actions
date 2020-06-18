@@ -1,0 +1,22 @@
+name: Testing Failure
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+      
+jobs: 
+  failski: 
+    runs-on: ubuntu-20.04
+    
+    steps: 
+    - uses: actions/checkout@v2
+    - name: setup python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8.3
+    - name: Fail
+      run: python app/request.py
