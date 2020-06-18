@@ -15,5 +15,9 @@ jobs:
     steps: 
     - name: succeed
       run: docker run python:3.8.3-slim-buster echo $PATH
+#    - name: fail
+#      run: docker run -v $(pwd):/home python:3.8.3-slim-buster /bin/bash -c "python home/app/request.py"
     - name: fail
-      run: docker run -v $(pwd):/home python:3.8.3-slim-buster /bin/bash -c "python home/app/request.py"
+      run: |
+        docker build -t pythonfail -f Dockerfile2
+        docker run pythonfail
