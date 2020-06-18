@@ -22,8 +22,11 @@ jobs:
       #- name: install flask
       #  run: pip install -r requirements.txt
       - name: run app
-        run: docker-compose up -d
-      - name: ping app
-        run: |
+        run: | 
+          docker-compose up -d
           pip install requests
           python app/request.py
+#      - name: ping app
+#        run: |
+#          pip install requests
+#          python app/request.py
